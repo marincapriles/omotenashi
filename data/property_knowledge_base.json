@@ -1,0 +1,485 @@
+{
+  "property": {
+    "name": "The Grand Omotenashi Resort & Spa",
+    "location": {
+      "address": "743 Verno Ave, Venice, CA 90291",
+      "coordinates": {"lat": 33.9925, "lng": -118.4694},
+      "description": "Oceanfront luxury resort in the heart of Venice Beach",
+      "airport_distance": "20 minutes from Los Angeles International Airport (LAX)"
+    },
+    "contact": {
+      "phone": "+1 (808) 555-0100",
+      "email": "concierge@grandomotenashi.com",
+      "website": "www.grandomotenashi.com"
+    },
+    "overview": {
+      "total_rooms": 200,
+      "property_size": "40 acres",
+      "beach_access": "Private white sand beach (800 meters)",
+      "established": "2019",
+      "last_renovation": "2023"
+    }
+  },
+  
+  "accommodations": {
+    "room_types": [
+      {
+        "name": "Ocean View Suite",
+        "count": 120,
+        "size": "65 sqm",
+        "max_occupancy": 3,
+        "features": ["Private lanai", "Deep soaking tub", "Rain shower", "Nespresso machine", "47-inch smart TV"],
+        "rate_range": "$850-1200/night"
+      },
+      {
+        "name": "Garden Villa",
+        "count": 50,
+        "size": "85 sqm", 
+        "max_occupancy": 4,
+        "features": ["Private garden", "Outdoor shower", "Full kitchen", "Private plunge pool", "Butler service"],
+        "rate_range": "$1200-1800/night"
+      },
+      {
+        "name": "Presidential Suite",
+        "count": 5,
+        "size": "200 sqm",
+        "max_occupancy": 6,
+        "features": ["270-degree ocean views", "Private infinity pool", "Grand piano", "Wine cellar", "24/7 butler"],
+        "rate_range": "$5000-8000/night"
+      }
+    ],
+    "amenities_all_rooms": [
+      "Twice-daily housekeeping",
+      "Luxury bath amenities by L'Occitane",
+      "Yukata robes and slippers",
+      "Beach bag and towels",
+      "Complimentary minibar (non-alcoholic)",
+      "In-room safe",
+      "High-speed WiFi (complimentary)"
+    ]
+  },
+  
+  "restaurants": {
+    "kaiseki": {
+      "name": "Kaiseki by Chef Yamamoto",
+      "type": "Traditional Japanese Fine Dining",
+      "rating": "Michelin 2-star",
+      "capacity": 40,
+      "dress_code": "Smart elegant",
+      "hours": {
+        "dinner": "6:00 PM - 9:30 PM (Two seatings: 6:00 PM and 8:30 PM)",
+        "closed": "Mondays"
+      },
+      "signature_dishes": [
+        "9-course Omakase menu ($295/person)",
+        "Seasonal sashimi selection",
+        "A5 Wagyu beef course",
+        "Chef's special miso black cod"
+      ],
+      "special_features": [
+        "Private dining room (8 guests)",
+        "Chef's table (4 guests)",
+        "Sake sommelier",
+        "View of Japanese garden"
+      ],
+      "reservation_policy": "Required, book 48 hours in advance"
+    },
+    
+    "il_cielo": {
+      "name": "Il Cielo Rooftop",
+      "type": "Contemporary Italian",
+      "capacity": 80,
+      "dress_code": "Resort elegant",
+      "hours": {
+        "lunch": "12:00 PM - 3:00 PM",
+        "dinner": "5:30 PM - 10:00 PM",
+        "closed": "Never"
+      },
+      "signature_dishes": [
+        "Homemade pasta (made fresh every 2 hours)",
+        "Wood-fired pizzas",
+        "Osso buco alla milanese",
+        "Tiramisu prepared tableside"
+      ],
+      "special_features": [
+        "360-degree ocean views",
+        "Live music Fri-Sat 7-10 PM",
+        "Sunset happy hour 5:30-6:30 PM",
+        "Private cabanas available"
+      ],
+      "reservation_policy": "Recommended for dinner"
+    },
+    
+    "ocean_terrace": {
+      "name": "Ocean Terrace Grill",
+      "type": "Seafood & International",
+      "capacity": 120,
+      "dress_code": "Resort casual",
+      "hours": {
+        "breakfast": "6:30 AM - 11:00 AM",
+        "lunch": "11:30 AM - 5:00 PM", 
+        "dinner": "5:30 PM - 9:30 PM",
+        "closed": "Never"
+      },
+      "signature_dishes": [
+        "Daily catch (market price)",
+        "Seafood tower for two",
+        "Prime ribeye steak",
+        "Lobster thermidor"
+      ],
+      "special_features": [
+        "Beachfront dining",
+        "Sunday champagne brunch",
+        "Fresh seafood flown in daily",
+        "Kids menu available"
+      ],
+      "reservation_policy": "Walk-ins welcome, reservations recommended for groups"
+    },
+    
+    "sunset_bar": {
+      "name": "Sunset Bar & Lounge",
+      "type": "Bar & Light Bites",
+      "capacity": 60,
+      "dress_code": "Resort casual", 
+      "hours": {
+        "daily": "11:00 AM - 12:00 AM",
+        "happy_hour": "4:00 PM - 6:00 PM"
+      },
+      "specialties": [
+        "Craft cocktails by award-winning mixologist",
+        "Extensive wine list (300+ labels)",
+        "Japanese whisky collection",
+        "Tapas and pupu platters"
+      ],
+      "entertainment": {
+        "monday": "Jazz trio 7-10 PM",
+        "wednesday": "Wine tasting 5-7 PM",
+        "friday": "Live band 8-11 PM",
+        "saturday": "DJ 9 PM-midnight"
+      }
+    },
+    
+    "in_room_dining": {
+      "name": "In-Room Dining",
+      "hours": "24/7",
+      "menu_types": [
+        "All-day dining menu",
+        "Late night menu (11 PM - 6 AM)",
+        "Spa cuisine menu",
+        "Children's menu"
+      ],
+      "special_services": [
+        "Private chef experience",
+        "Romantic dinner setup",
+        "Breakfast in bed",
+        "Customized dietary menus"
+      ]
+    }
+  },
+  
+  "spa": {
+    "name": "Serenity Spa & Onsen",
+    "size": "15,000 sq ft",
+    "hours": {
+      "spa": "8:00 AM - 10:00 PM daily",
+      "onsen": "6:00 AM - 11:00 PM daily",
+      "fitness": "24/7 for guests"
+    },
+    "facilities": [
+      "12 treatment rooms (including 3 couples suites)",
+      "Traditional Japanese onsen (hot springs)",
+      "Steam room and dry sauna",
+      "Relaxation lounge with ocean views",
+      "Meditation garden",
+      "Spa boutique"
+    ],
+    "signature_treatments": {
+      "omotenashi_journey": {
+        "name": "Omotenashi Signature Journey",
+        "duration": "3 hours",
+        "price": "$595",
+        "includes": [
+          "Welcome foot ritual",
+          "90-minute hot stone massage",
+          "Gold leaf facial treatment", 
+          "Private onsen session",
+          "Light spa lunch"
+        ]
+      },
+      "moonlight_ritual": {
+        "name": "Couples Moonlight Ritual",
+        "duration": "2.5 hours",
+        "price": "$850 per couple",
+        "includes": [
+          "Private outdoor pavilion",
+          "Synchronized massage",
+          "Aromatherapy journey",
+          "Sound healing session",
+          "Champagne and chocolate"
+        ]
+      },
+      "hawaiian_healing": {
+        "name": "Traditional Hawaiian Lomi Lomi",
+        "duration": "90 minutes",
+        "price": "$325",
+        "description": "Ancient Hawaiian massage technique using forearms and flowing strokes"
+      }
+    },
+    "wellness_programs": [
+      {
+        "name": "Sunrise Yoga",
+        "schedule": "Daily 6:30 AM",
+        "location": "Beach pavilion",
+        "price": "Complimentary"
+      },
+      {
+        "name": "Meditation Classes",
+        "schedule": "Daily 5:00 PM",
+        "location": "Spa garden",
+        "price": "Complimentary"
+      },
+      {
+        "name": "Personal Training",
+        "availability": "By appointment",
+        "price": "$150/hour"
+      }
+    ],
+    "booking_policy": "Advance booking recommended, 24-hour cancellation policy"
+  },
+  
+  "activities": {
+    "water_sports": [
+      {
+        "name": "Snorkeling",
+        "availability": "Daily 8 AM - 5 PM",
+        "price": "Complimentary equipment",
+        "location": "Beach hut"
+      },
+      {
+        "name": "Stand-up Paddleboarding",
+        "availability": "Daily sunrise to sunset",
+        "price": "$75/2 hours",
+        "instruction": "Complimentary lesson at 9 AM daily"
+      },
+      {
+        "name": "Sunset Sailing",
+        "schedule": "Daily 5:00 PM departure",
+        "duration": "2 hours",
+        "price": "$150/person",
+        "includes": "Champagne and appetizers"
+      },
+      {
+        "name": "Scuba Diving",
+        "operator": "Partner with Maui Dive Company",
+        "schedule": "Morning and afternoon dives",
+        "price": "From $180/person",
+        "certification": "PADI courses available"
+      }
+    ],
+    
+    "land_activities": [
+      {
+        "name": "Championship Golf Course",
+        "holes": 18,
+        "designer": "Robert Trent Jones Jr.",
+        "features": ["Ocean views on 15 holes", "Pro shop", "Golf academy"],
+        "rates": "Guests $250, includes cart"
+      },
+      {
+        "name": "Tennis Center",
+        "courts": "6 courts (4 clay, 2 hard)",
+        "lighting": "4 courts lit for night play",
+        "services": ["Pro shop", "Private lessons", "Ball machine"],
+        "rates": "Complimentary for guests, lessons $120/hour"
+      },
+      {
+        "name": "Cultural Experiences",
+        "options": [
+          {
+            "name": "Lei Making Class",
+            "schedule": "Tuesday & Thursday 3 PM",
+            "price": "$95/person"
+          },
+          {
+            "name": "Hula Lessons", 
+            "schedule": "Monday & Wednesday 4 PM",
+            "price": "Complimentary"
+          },
+          {
+            "name": "Traditional Tea Ceremony",
+            "schedule": "By appointment",
+            "price": "$150/person",
+            "duration": "90 minutes"
+          }
+        ]
+      }
+    ],
+    
+    "excursions": [
+      {
+        "name": "Helicopter Tour - Maui Spectacular",
+        "duration": "65 minutes",
+        "highlights": ["Haleakala Crater", "Hana Rainforest", "Sea cliffs"],
+        "price": "$450/person",
+        "schedule": "Multiple daily departures"
+      },
+      {
+        "name": "Road to Hana Adventure",
+        "duration": "Full day (10 hours)",
+        "includes": ["Luxury van", "Guide", "Lunch", "Waterfall stops"],
+        "price": "$325/person",
+        "schedule": "Tuesday, Thursday, Saturday"
+      },
+      {
+        "name": "Sunset at Haleakala",
+        "duration": "6 hours",
+        "includes": ["Transportation", "Park entry", "Warm clothing", "Dinner"],
+        "price": "$195/person",
+        "schedule": "Daily, times vary by season"
+      }
+    ]
+  },
+  
+  "amenities": {
+    "pools": [
+      {
+        "name": "Infinity Pool",
+        "location": "Main resort area",
+        "features": ["Adults only", "Swim-up bar", "Ocean views", "Cabanas"],
+        "hours": "7 AM - 10 PM"
+      },
+      {
+        "name": "Family Pool", 
+        "location": "Garden area",
+        "features": ["Water slide", "Kids area", "Poolside dining"],
+        "hours": "7 AM - 9 PM"
+      },
+      {
+        "name": "Serenity Pool",
+        "location": "Spa",
+        "features": ["Mineral water", "Quiet zone", "Day beds"],
+        "hours": "8 AM - 8 PM"
+      }
+    ],
+    
+    "beach": {
+      "type": "Private white sand beach",
+      "length": "800 meters",
+      "features": [
+        "Beach attendant service",
+        "Complimentary loungers and umbrellas",
+        "Beach bar service",
+        "Water sports rentals",
+        "Lifeguard on duty 9 AM - 5 PM"
+      ]
+    },
+    
+    "fitness_center": {
+      "size": "3,000 sq ft",
+      "equipment": ["Peloton bikes", "TRX", "Free weights", "Technogym machines"],
+      "services": ["Personal training", "Group classes", "Yoga studio"],
+      "hours": "24/7 with room key"
+    },
+    
+    "business_center": {
+      "facilities": ["Meeting rooms", "Conference calls capability", "Printing/scanning"],
+      "hours": "24/7 self-service, staffed 8 AM - 6 PM"
+    },
+    
+    "shopping": {
+      "boutiques": [
+        "Luxury fashion boutique",
+        "Local artisan gallery",
+        "Jewelry store",
+        "Resort wear shop",
+        "Sundries and gifts"
+      ],
+      "hours": "9 AM - 9 PM daily"
+    }
+  },
+  
+  "services": {
+    "concierge": {
+      "availability": "24/7",
+      "services": [
+        "Restaurant reservations (on and off property)",
+        "Activity and excursion booking",
+        "Transportation arrangements",
+        "Special occasion planning",
+        "Local recommendations",
+        "Shipping services"
+      ]
+    },
+    
+    "butler_service": {
+      "availability": "For Villa and Presidential Suite guests",
+      "hours": "24/7 on call",
+      "services": [
+        "Unpacking and packing",
+        "Pressing service",
+        "Shoe shine",
+        "Personal shopping",
+        "Private dining coordination"
+      ]
+    },
+    
+    "transportation": {
+      "airport_shuttle": {
+        "type": "Luxury SUV or Tesla",
+        "schedule": "On demand",
+        "price": "Complimentary for suite guests, $125 each way for others"
+      },
+      "local_shuttle": {
+        "destinations": ["Wailea shops", "Lahaina town"],
+        "schedule": "Hourly 9 AM - 9 PM",
+        "price": "Complimentary"
+      },
+      "car_rental": {
+        "partner": "Hertz Prestige Collection",
+        "delivery": "To resort within 2 hours",
+        "options": ["Tesla", "Convertibles", "Luxury SUVs"]
+      }
+    },
+    
+    "childcare": {
+      "kids_club": {
+        "name": "Keiki Aloha Club",
+        "ages": "5-12 years",
+        "hours": "9 AM - 5 PM daily",
+        "activities": ["Arts & crafts", "Beach games", "Movie time", "Cultural activities"],
+        "price": "$95/day includes lunch"
+      },
+      "babysitting": {
+        "availability": "24/7 with 4-hour notice",
+        "price": "$35/hour (minimum 3 hours)",
+        "providers": "Certified and background-checked"
+      }
+    }
+  },
+  
+  "policies": {
+    "check_in_out": {
+      "standard_check_in": "4:00 PM",
+      "standard_check_out": "12:00 PM",
+      "early_check_in": "Subject to availability, $100 fee if guaranteed",
+      "late_check_out": "Until 6 PM subject to availability, 50% room rate"
+    },
+    
+    "cancellation": {
+      "peak_season": "14 days prior to arrival",
+      "regular_season": "7 days prior to arrival",
+      "penalties": "First night charge for late cancellation"
+    },
+    
+    "pets": {
+      "allowed": false,
+      "service_animals": "Welcome with proper documentation"
+    },
+    
+    "smoking": {
+      "policy": "100% smoke-free property",
+      "designated_areas": "Available outside main building",
+      "violation_fee": "$500 cleaning fee"
+    }
+  }
+}

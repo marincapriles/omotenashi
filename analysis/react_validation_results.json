@@ -1,0 +1,356 @@
+{
+  "validation_date": "2025-07-22T21:53:26.618950",
+  "react_results": [
+    {
+      "scenario_id": 1,
+      "scenario_name": "Simple dinner request",
+      "guest_message": "I'd like to have dinner tonight",
+      "expected_tools": [
+        "make_reservation",
+        "get_recommendations"
+      ],
+      "actual_tools": [
+        "make_reservation",
+        "get_recommendations"
+      ],
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "execution_time": 16.861188888549805,
+      "patterns_found": [
+        "restaurant",
+        "dining",
+        "reservation"
+      ],
+      "response_preview": "Welcome to Sakura Resort! I would be delighted to arrange a memorable dining experience for you this evening. Based on tonight's availability, I can personally recommend Il Cielo Rooftop, our signatur..."
+    },
+    {
+      "scenario_id": 2,
+      "scenario_name": "Specific cuisine request",
+      "guest_message": "I'm craving Italian food with a view",
+      "expected_tools": [
+        "make_reservation",
+        "get_recommendations"
+      ],
+      "actual_tools": [
+        "make_reservation",
+        "property_info",
+        "get_recommendations"
+      ],
+      "precision": 0.6666666666666666,
+      "recall": 1.0,
+      "f1_score": 0.8,
+      "execution_time": 16.42414903640747,
+      "patterns_found": [
+        "Il Cielo",
+        "rooftop",
+        "Italian"
+      ],
+      "response_preview": "Welcome! I'm delighted to help you create a memorable Italian dining experience. I have the perfect recommendation for you - our signature Il Cielo restaurant, located on our rooftop level with breath..."
+    },
+    {
+      "scenario_id": 3,
+      "scenario_name": "Anniversary dinner",
+      "guest_message": "We're celebrating our anniversary tonight",
+      "expected_tools": [
+        "make_reservation",
+        "property_info",
+        "get_recommendations"
+      ],
+      "actual_tools": [
+        "make_reservation",
+        "book_spa",
+        "get_recommendations"
+      ],
+      "precision": 0.6666666666666666,
+      "recall": 0.6666666666666666,
+      "f1_score": 0.6666666666666666,
+      "execution_time": 17.249871730804443,
+      "patterns_found": [
+        "special",
+        "romantic",
+        "champagne"
+      ],
+      "response_preview": "Konbanwa (Good evening), and my heartfelt congratulations on your anniversary! I'm delighted to help create an unforgettable celebration for this special occasion. I've arranged a romantic day of pamp..."
+    },
+    {
+      "scenario_id": 4,
+      "scenario_name": "General activity inquiry",
+      "guest_message": "What can we do this afternoon?",
+      "expected_tools": [
+        "property_info",
+        "get_recommendations"
+      ],
+      "actual_tools": [
+        "get_recommendations"
+      ],
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1_score": 0.6666666666666666,
+      "execution_time": 10.905282258987427,
+      "patterns_found": [
+        "experience",
+        "afternoon"
+      ],
+      "response_preview": "Welcome! I'm delighted to help you plan an exceptional afternoon. I've curated a wonderful sequence of experiences that I believe you'll enjoy:\n\nFor This Afternoon:\n\u2022 3:00 PM - I highly recommend our ..."
+    },
+    {
+      "scenario_id": 5,
+      "scenario_name": "Adventure activity",
+      "guest_message": "I want an exciting adventure today",
+      "expected_tools": [
+        "make_reservation",
+        "get_recommendations"
+      ],
+      "actual_tools": [
+        "make_reservation",
+        "get_recommendations"
+      ],
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "execution_time": 16.961528062820435,
+      "patterns_found": [
+        "helicopter",
+        "adventure"
+      ],
+      "response_preview": "Welcome to another beautiful day at Sakura Resort! I'm delighted to help create an extraordinary adventure for you today. I've arranged a spectacular helicopter tour that will give you a breathtaking ..."
+    },
+    {
+      "scenario_id": 6,
+      "scenario_name": "Relaxation request",
+      "guest_message": "I need to relax after my long flight",
+      "expected_tools": [
+        "book_spa",
+        "get_recommendations"
+      ],
+      "actual_tools": [
+        "book_spa",
+        "get_recommendations"
+      ],
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "execution_time": 13.657567977905273,
+      "patterns_found": [
+        "spa",
+        "treatment",
+        "relaxation"
+      ],
+      "response_preview": "Welcome to Sakura Resort. I completely understand your need for relaxation after a long flight, and I'm delighted to create a rejuvenating experience for you.\n\nI've arranged our signature Omotenashi J..."
+    },
+    {
+      "scenario_id": 7,
+      "scenario_name": "Couples spa",
+      "guest_message": "Can you book a couples massage for tomorrow?",
+      "expected_tools": [
+        "book_spa"
+      ],
+      "actual_tools": [
+        "make_reservation",
+        "book_spa",
+        "get_recommendations"
+      ],
+      "precision": 0.3333333333333333,
+      "recall": 1.0,
+      "f1_score": 0.5,
+      "execution_time": 14.872118949890137,
+      "patterns_found": [
+        "moonlight",
+        "ritual",
+        "massage",
+        "couples"
+      ],
+      "response_preview": "Konbanwa! I'm delighted to confirm your couples massage for tomorrow at 2:00 PM. I've secured our signature Moonlight Ritual treatment, which I think you'll find absolutely extraordinary. The 2.5-hour..."
+    },
+    {
+      "scenario_id": 8,
+      "scenario_name": "Early check-in",
+      "guest_message": "Can we check in early tomorrow? We land at 9am",
+      "expected_tools": [
+        "modify_checkin_checkout"
+      ],
+      "actual_tools": [
+        "property_info",
+        "modify_checkin_checkout",
+        "get_recommendations"
+      ],
+      "precision": 0.3333333333333333,
+      "recall": 1.0,
+      "f1_score": 0.5,
+      "execution_time": 16.489042282104492,
+      "patterns_found": [
+        "early",
+        "check-in",
+        "11:00 AM",
+        "arranged"
+      ],
+      "response_preview": "Konnichiwa! I'm delighted to assist with your early arrival tomorrow. I've arranged for an early check-in at 11:00 AM, and we've created a seamless arrival experience for you:\n\nUpon your 9:00 AM arriv..."
+    },
+    {
+      "scenario_id": 9,
+      "scenario_name": "Late checkout",
+      "guest_message": "Is late checkout available? We'd like to stay until evening",
+      "expected_tools": [
+        "modify_checkin_checkout"
+      ],
+      "actual_tools": [
+        "modify_checkin_checkout",
+        "get_recommendations"
+      ],
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1_score": 0.6666666666666666,
+      "execution_time": 14.808063983917236,
+      "patterns_found": [
+        "late",
+        "6:00 PM",
+        "extended"
+      ],
+      "response_preview": "Konbanwa! I'm delighted to confirm your late checkout until 6:00 PM. I've arranged everything to ensure your extended stay is both comfortable and memorable. \n\nTo help you make the most of your additi..."
+    },
+    {
+      "scenario_id": 10,
+      "scenario_name": "Full evening planning",
+      "guest_message": "Plan a romantic evening for us - dinner, activities, everything",
+      "expected_tools": [
+        "make_reservation",
+        "property_info",
+        "get_recommendations"
+      ],
+      "actual_tools": [
+        "property_info",
+        "get_recommendations"
+      ],
+      "precision": 1.0,
+      "recall": 0.6666666666666666,
+      "f1_score": 0.8,
+      "execution_time": 16.679306983947754,
+      "patterns_found": [
+        "dinner",
+        "sunset",
+        "romantic"
+      ],
+      "response_preview": "Konbanwa! I'm delighted to create an unforgettable romantic evening for you at Sakura Resort. I've curated a magical experience that I'm confident you'll cherish:\n\nI recommend starting your evening at..."
+    },
+    {
+      "scenario_id": 11,
+      "scenario_name": "Day planning with preferences",
+      "guest_message": "We want a relaxing day - spa in the morning, light lunch, and maybe some easy activities",
+      "expected_tools": [
+        "make_reservation",
+        "book_spa",
+        "get_recommendations"
+      ],
+      "actual_tools": [
+        "book_spa",
+        "get_recommendations"
+      ],
+      "precision": 1.0,
+      "recall": 0.6666666666666666,
+      "f1_score": 0.8,
+      "execution_time": 19.024283170700073,
+      "patterns_found": [
+        "spa",
+        "lunch",
+        "morning",
+        "activities"
+      ],
+      "response_preview": "Konnichiwa! I'm delighted to help craft your perfect day of relaxation. I've carefully curated a seamless experience that will leave you feeling completely rejuvenated:\n\n\ud83c\udf05 Morning Wellness (10:00 AM -..."
+    },
+    {
+      "scenario_id": 12,
+      "scenario_name": "Property overview",
+      "guest_message": "Tell me about the resort amenities",
+      "expected_tools": [
+        "property_info"
+      ],
+      "actual_tools": [
+        "property_info",
+        "get_recommendations"
+      ],
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1_score": 0.6666666666666666,
+      "execution_time": 12.777732133865356,
+      "patterns_found": [
+        "pools",
+        "beach",
+        "golf",
+        "fitness"
+      ],
+      "response_preview": "Welcome to Sakura Resort! I'm delighted to share our exceptional amenities that blend luxury with authentic Japanese hospitality.\n\nOur beachfront paradise offers several distinctive experiences:\n\n\ud83c\udf7d\ufe0f C..."
+    },
+    {
+      "scenario_id": 13,
+      "scenario_name": "Ambiguous request",
+      "guest_message": "What do you recommend?",
+      "expected_tools": [
+        "property_info",
+        "get_recommendations"
+      ],
+      "actual_tools": [
+        "property_info",
+        "get_recommendations"
+      ],
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "execution_time": 16.21616005897522,
+      "patterns_found": [
+        "recommend"
+      ],
+      "response_preview": "Welcome to Sakura Resort! I'm delighted to curate some extraordinary experiences for you that embody our signature Japanese hospitality.\n\nFor this evening, I would recommend starting with handcrafted ..."
+    },
+    {
+      "scenario_id": 14,
+      "scenario_name": "No tools needed",
+      "guest_message": "What time is it?",
+      "expected_tools": [],
+      "actual_tools": [
+        "property_info",
+        "_Exception"
+      ],
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "execution_time": 16.976902961730957,
+      "patterns_found": [
+        "time"
+      ],
+      "response_preview": "I apologize that I don't have access to the exact current time, but I'd be delighted to assist you in making the most of your day at Sakura Resort. In the spirit of Omotenashi, may I ask if you're inq..."
+    },
+    {
+      "scenario_id": 15,
+      "scenario_name": "Implicit spa need",
+      "guest_message": "My muscles are really sore from the flight",
+      "expected_tools": [
+        "book_spa",
+        "get_recommendations"
+      ],
+      "actual_tools": [
+        "property_info",
+        "book_spa",
+        "get_recommendations"
+      ],
+      "precision": 0.6666666666666666,
+      "recall": 1.0,
+      "f1_score": 0.8,
+      "execution_time": 15.058331966400146,
+      "patterns_found": [
+        "spa",
+        "massage",
+        "treatment",
+        "relief"
+      ],
+      "response_preview": "I completely understand how uncomfortable post-flight muscle tension can be, and I'm delighted to help you find immediate relief. I've secured you a reservation for our signature Omotenashi Journey at..."
+    }
+  ],
+  "summary": {
+    "total_scenarios": 15,
+    "average_precision": 0.7111111111111111,
+    "average_recall": 0.8333333333333334,
+    "average_f1": 0.7244444444444444,
+    "average_response_time": 15.664102029800414
+  }
+}

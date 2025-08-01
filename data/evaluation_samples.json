@@ -1,0 +1,370 @@
+{
+  "test_samples": [
+    {
+      "id": 1,
+      "request": "I'd like to book dinner at your best restaurant tonight",
+      "ground_truth": ["recommendations", "reservation"],
+      "category": "dining_with_booking",
+      "complexity": "medium"
+    },
+    {
+      "id": 2,
+      "request": "What dining options do you have?",
+      "ground_truth": ["property_info", "recommendations"],
+      "category": "dining_inquiry",
+      "complexity": "low"
+    },
+    {
+      "id": 3,
+      "request": "I need a massage to relax after my flight",
+      "ground_truth": ["recommendations", "spa"],
+      "category": "spa_with_booking",
+      "complexity": "medium"
+    },
+    {
+      "id": 4,
+      "request": "Can I check in early tomorrow?",
+      "ground_truth": ["checkin_checkout"],
+      "category": "checkin_modification",
+      "complexity": "low"
+    },
+    {
+      "id": 5,
+      "request": "Tell me about the resort amenities",
+      "ground_truth": ["property_info"],
+      "category": "property_inquiry",
+      "complexity": "low"
+    },
+    {
+      "id": 6,
+      "request": "I want to plan a romantic evening for my wife",
+      "ground_truth": ["recommendations", "reservation", "spa"],
+      "category": "complex_experience",
+      "complexity": "high"
+    },
+    {
+      "id": 7,
+      "request": "What spa treatments do you offer?",
+      "ground_truth": ["recommendations"],
+      "category": "spa_inquiry",
+      "complexity": "low"
+    },
+    {
+      "id": 8,
+      "request": "Book me a couples massage for tomorrow evening",
+      "ground_truth": ["spa"],
+      "category": "spa_booking",
+      "complexity": "medium"
+    },
+    {
+      "id": 9,
+      "request": "What time does the fitness center open?",
+      "ground_truth": ["property_info"],
+      "category": "facility_hours",
+      "complexity": "low"
+    },
+    {
+      "id": 10,
+      "request": "I need a late checkout on Sunday",
+      "ground_truth": ["checkin_checkout"],
+      "category": "checkout_modification",
+      "complexity": "low"
+    },
+    {
+      "id": 11,
+      "request": "What activities are available for kids?",
+      "ground_truth": ["property_info", "recommendations"],
+      "category": "family_activities",
+      "complexity": "medium"
+    },
+    {
+      "id": 12,
+      "request": "Can you recommend a good local restaurant off-property?",
+      "ground_truth": ["recommendations"],
+      "category": "offsite_dining",
+      "complexity": "medium"
+    },
+    {
+      "id": 13,
+      "request": "I'd like to book the helicopter tour",
+      "ground_truth": ["reservation"],
+      "category": "activity_booking",
+      "complexity": "medium"
+    },
+    {
+      "id": 14,
+      "request": "What's the weather like today?",
+      "ground_truth": ["none"],
+      "category": "weather_inquiry",
+      "complexity": "unmappable"
+    },
+    {
+      "id": 15,
+      "request": "Can you arrange airport transportation?",
+      "ground_truth": ["property_info", "reservation"],
+      "category": "transportation",
+      "complexity": "medium"
+    },
+    {
+      "id": 16,
+      "request": "I lost my passport, can you help?",
+      "ground_truth": ["none"],
+      "category": "emergency_assistance",
+      "complexity": "unmappable"
+    },
+    {
+      "id": 17,
+      "request": "What are your pool hours?",
+      "ground_truth": ["property_info"],
+      "category": "facility_hours",
+      "complexity": "low"
+    },
+    {
+      "id": 18,
+      "request": "I want to surprise my partner with something special",
+      "ground_truth": ["recommendations", "reservation", "spa"],
+      "category": "surprise_planning",
+      "complexity": "high"
+    },
+    {
+      "id": 19,
+      "request": "Book a table at Il Cielo for lunch",
+      "ground_truth": ["reservation"],
+      "category": "specific_restaurant_booking",
+      "complexity": "low"
+    },
+    {
+      "id": 20,
+      "request": "What golf facilities do you have?",
+      "ground_truth": ["property_info"],
+      "category": "golf_inquiry",
+      "complexity": "low"
+    },
+    {
+      "id": 21,
+      "request": "Can I extend my stay by two nights?",
+      "ground_truth": ["none"],
+      "category": "reservation_modification",
+      "complexity": "unmappable"
+    },
+    {
+      "id": 22,
+      "request": "I need recommendations for anniversary dinner",
+      "ground_truth": ["recommendations", "reservation"],
+      "category": "special_occasion_dining",
+      "complexity": "medium"
+    },
+    {
+      "id": 23,
+      "request": "What's included in the signature spa package?",
+      "ground_truth": ["recommendations"],
+      "category": "spa_package_inquiry",
+      "complexity": "low"
+    },
+    {
+      "id": 24,
+      "request": "Can you help me propose to my girlfriend?",
+      "ground_truth": ["recommendations", "reservation"],
+      "category": "proposal_planning",
+      "complexity": "high"
+    },
+    {
+      "id": 25,
+      "request": "What time is sunset today?",
+      "ground_truth": ["none"],
+      "category": "general_information",
+      "complexity": "unmappable"
+    },
+    {
+      "id": 26,
+      "request": "I want to learn about Hawaiian culture",
+      "ground_truth": ["recommendations", "reservation"],
+      "category": "cultural_experiences",
+      "complexity": "medium"
+    },
+    {
+      "id": 27,
+      "request": "Can you change my room to ocean view?",
+      "ground_truth": ["none"],
+      "category": "room_change",
+      "complexity": "unmappable"
+    },
+    {
+      "id": 28,
+      "request": "What water sports are available?",
+      "ground_truth": ["property_info", "recommendations"],
+      "category": "water_sports_inquiry",
+      "complexity": "medium"
+    },
+    {
+      "id": 29,
+      "request": "I need to cancel my spa appointment",
+      "ground_truth": ["none"],
+      "category": "cancellation",
+      "complexity": "unmappable"
+    },
+    {
+      "id": 30,
+      "request": "What's the dress code for Kaiseki?",
+      "ground_truth": ["property_info"],
+      "category": "dress_code_inquiry",
+      "complexity": "low"
+    },
+    {
+      "id": 31,
+      "request": "I'm feeling unwell, can you recommend a doctor?",
+      "ground_truth": ["none"],
+      "category": "medical_assistance",
+      "complexity": "unmappable"
+    },
+    {
+      "id": 32,
+      "request": "What adventure activities do you offer?",
+      "ground_truth": ["recommendations"],
+      "category": "adventure_inquiry",
+      "complexity": "medium"
+    },
+    {
+      "id": 33,
+      "request": "Can I book the private yacht for sunset cruise?",
+      "ground_truth": ["reservation"],
+      "category": "yacht_booking",
+      "complexity": "medium"
+    },
+    {
+      "id": 34,
+      "request": "I want to celebrate my birthday here",
+      "ground_truth": ["recommendations", "reservation"],
+      "category": "birthday_celebration",
+      "complexity": "high"
+    },
+    {
+      "id": 35,
+      "request": "What's the WiFi password?",
+      "ground_truth": ["none"],
+      "category": "technical_support",
+      "complexity": "unmappable"
+    },
+    {
+      "id": 36,
+      "request": "Do you have tennis courts?",
+      "ground_truth": ["property_info"],
+      "category": "facility_inquiry",
+      "complexity": "low"
+    },
+    {
+      "id": 37,
+      "request": "I'd like to do the traditional tea ceremony",
+      "ground_truth": ["reservation"],
+      "category": "cultural_activity_booking",
+      "complexity": "medium"
+    },
+    {
+      "id": 38,
+      "request": "What restaurants are open for breakfast?",
+      "ground_truth": ["property_info", "recommendations"],
+      "category": "breakfast_inquiry",
+      "complexity": "low"
+    },
+    {
+      "id": 39,
+      "request": "I need childcare services for tonight",
+      "ground_truth": ["property_info", "reservation"],
+      "category": "childcare",
+      "complexity": "medium"
+    },
+    {
+      "id": 40,
+      "request": "Can you arrange a private chef for our villa?",
+      "ground_truth": ["reservation"],
+      "category": "private_chef",
+      "complexity": "high"
+    },
+    {
+      "id": 41,
+      "request": "What's the shuttle schedule to town?",
+      "ground_truth": ["property_info"],
+      "category": "transportation_schedule",
+      "complexity": "low"
+    },
+    {
+      "id": 42,
+      "request": "I want to book everything for a perfect spa day",
+      "ground_truth": ["recommendations", "spa", "reservation"],
+      "category": "spa_day_package",
+      "complexity": "high"
+    },
+    {
+      "id": 43,
+      "request": "Do you allow pets?",
+      "ground_truth": ["property_info"],
+      "category": "pet_policy",
+      "complexity": "low"
+    },
+    {
+      "id": 44,
+      "request": "I need to print some documents",
+      "ground_truth": ["property_info"],
+      "category": "business_services",
+      "complexity": "low"
+    },
+    {
+      "id": 45,
+      "request": "What's your cancellation policy?",
+      "ground_truth": ["property_info"],
+      "category": "policy_inquiry",
+      "complexity": "low"
+    },
+    {
+      "id": 46,
+      "request": "I want to go snorkeling tomorrow morning",
+      "ground_truth": ["recommendations", "reservation"],
+      "category": "water_activity_booking",
+      "complexity": "medium"
+    },
+    {
+      "id": 47,
+      "request": "Can you store my luggage after checkout?",
+      "ground_truth": ["property_info"],
+      "category": "luggage_service",
+      "complexity": "low"
+    },
+    {
+      "id": 48,
+      "request": "I want to upgrade my room",
+      "ground_truth": ["none"],
+      "category": "room_upgrade",
+      "complexity": "unmappable"
+    },
+    {
+      "id": 49,
+      "request": "What's the best way to see the island?",
+      "ground_truth": ["recommendations", "reservation"],
+      "category": "island_exploration",
+      "complexity": "medium"
+    },
+    {
+      "id": 50,
+      "request": "I need ice delivered to my room",
+      "ground_truth": ["none"],
+      "category": "room_service_request",
+      "complexity": "unmappable"
+    }
+  ],
+  
+  "evaluation_criteria": {
+    "precision": "Percentage of tool selections that match ground truth exactly",
+    "recall": "Percentage of required tools that were selected",
+    "f1_score": "Harmonic mean of precision and recall",
+    "over_selection": "Tools selected that weren't in ground truth",
+    "under_selection": "Required tools that weren't selected",
+    "unmappable_handling": "How well agent handles requests with no applicable tools"
+  },
+  
+  "complexity_levels": {
+    "low": "Single tool or simple inquiry",
+    "medium": "2-3 tools or moderate complexity",
+    "high": "Multiple tools with complex coordination",
+    "unmappable": "No existing tools can fulfill the request"
+  }
+}

@@ -1,0 +1,342 @@
+# Omotenashi Prototype v0.2 - Implementation Proposal
+
+## Overview
+This document outlines the implementation approach for Prototype v0.2, which adds a second agent (Operations Manager) that coordinates with the existing Concierge Agent through trigger-based communication.
+
+## Key Requirements from PRD v0.2
+- Add Agent 2: Operations Manager with its own BDI profile
+- Agent 2 has 5 tools: communicate_booking_changes, resolve_escalation, alert_guest_issue, provide_daily_update, operational_checkin
+- Add trigger_escalation tool to Agent 1 (Concierge)
+- Agent 1 actions can trigger Agent 2 actions
+- Agent 2 communicates with Property Manager when:
+  * Agent 1 modifies check-in/check-out times
+  * Agent 1 triggers an escalation
+- CLI shows both agent responses in clearly labeled sections
+
+## System Architecture Changes
+
+### Current (v0.1):
+```
+┌─────────────────┐    ┌─────────────────────┐
+│   CLI Client    │────│  Concierge Agent    │
+│                 │    │                     │
+│ - User Input    │    │ - BDI Profile       │
+│ - Response      │    │ - 5 Tools           │
+│   Display       │    │ - LangGraph Flow    │
+└─────────────────┘    └─────────────────────┘
+```
+
+### Proposed (v0.2):
+```
+┌─────────────────┐    ┌──────────────────────┐    ┌─────────────────────┐
+│   CLI Client    │────│  Agent Coordinator   │────│  Property Manager   │
+│                 │    │                      │    │    (User)           │
+│ - Shows both    │    │ - Agent 1: Concierge │    └─────────────────────┘
+│   agent         │    │ - Agent 2: Operations│
+│   responses     │    │ - Inter-agent msgs   │
+└─────────────────┘    └──────────────────────┘
+```
+
+## Agent 2: Operations Manager
+
+### BDI Profile (config/operations_bdi_profile.yaml)
+```yaml
+beliefs:
+  - "Proactive communication prevents operational issues"
+  - "Property managers need timely, relevant updates"
+  - "Guest issues require immediate attention and resolution"
+  - "Smooth operations enable exceptional guest experiences"
+  - "Omotenashi requires seamless coordination behind the scenes"
+
+desires:
+  - "Maintain seamless property operations"
+  - "Resolve escalations efficiently"
+  - "Keep property manager informed of important changes"
+  - "Support concierge agent in delivering Omotenashi"
+
+intentions:
+  - "Communicate booking changes immediately"
+  - "Address escalations with urgency and care"
+  - "Provide clear, actionable operational updates"
+  - "Anticipate operational needs"
+
+tools:
+  - communicate_booking_changes
+  - resolve_escalation
+  - alert_guest_issue
+  - provide_daily_update
+  - operational_checkin
+```
+
+### Agent 2 Tools Implementation
+```python
+# New tools for Operations Manager
+def communicate_booking_changes(change_details: str) -> str:
+    """Notify property manager of booking modifications."""
+    return f"✅ Property Manager notified: {change_details}. Housekeeping and logistics updated."
+
+def resolve_escalation(escalation_details: str) -> str:
+    """Handle escalated guest issues with management protocols."""
+    return f"🔧 Escalation resolved: {escalation_details}. Management team engaged, guest satisfaction prioritized."
+
+def alert_guest_issue(issue_type: str, severity: str) -> str:
+    """Alert property manager of guest issues requiring attention."""
+    return f"🚨 Guest issue alert sent: {issue_type} (Severity: {severity}). Management awareness confirmed."
+
+def provide_daily_update() -> str:
+    """Provide operational status update."""
+    return "📊 Daily operational update: All systems running smoothly. Guest satisfaction high. Staff performance excellent."
+
+def operational_checkin() -> str:
+    """Perform routine operational check."""
+    return "✅ Operational check complete: Staff briefed, amenities verified, guest requests tracked."
+```
+
+## Agent 1 Enhancements
+
+### New Tool for Concierge Agent
+```python
+def trigger_escalation(issue_description: str) -> str:
+    """Escalate unresolvable guest issues to operations manager."""
+    return f"🆘 Escalation triggered: {issue_description}. Operations manager will provide additional assistance."
+```
+
+### Updated Tool List for Agent 1
+- property_info (existing)
+- recommendations (existing) 
+- reservation (existing)
+- spa (existing)
+- checkin_checkout (existing)
+- trigger_escalation (NEW)
+
+## Inter-Agent Coordination System
+
+### Agent Coordinator Class
+```python
+class AgentCoordinator:
+    def __init__(self):
+        self.concierge_agent = ConciergeAgent()
+        self.operations_agent = OperationsAgent()
+        self.trigger_manager = TriggerManager()
+    
+    def process_user_input(self, user_input: str):
+        # Step 1: Agent 1 (Concierge) processes user input
+        concierge_response = self.concierge_agent.process(user_input)
+        
+        # Step 2: Check if Agent 1's actions trigger Agent 2
+        triggers = self.trigger_manager.check_triggers(concierge_response)
+        
+        # Step 3: If triggers exist, activate Agent 2
+        operations_response = None
+        if triggers:
+            operations_response = self.operations_agent.handle_triggers(triggers)
+        
+        return {
+            "concierge": concierge_response,
+            "operations": operations_response
+        }
+```
+
+### Trigger Detection Logic
+```python
+class TriggerManager:
+    @staticmethod
+    def check_triggers(concierge_response):
+        triggers = []
+        
+        # Trigger 1: Check-in/check-out modifications
+        if "checkin_checkout" in concierge_response.tools_used:
+            triggers.append({
+                "type": "booking_change",
+                "action": "communicate_booking_changes",
+                "data": "Guest check-in/check-out time modified"
+            })
+        
+        # Trigger 2: Escalations
+        if "trigger_escalation" in concierge_response.tools_used:
+            triggers.append({
+                "type": "escalation", 
+                "action": "resolve_escalation",
+                "data": concierge_response.escalation_details
+            })
+        
+        return triggers
+```
+
+## Enhanced CLI Interface
+
+### Dual Agent Response Display
+```python
+def display_responses(responses):
+    print("\n" + "="*70)
+    print("🏨 CONCIERGE AGENT RESPONSE")
+    print("="*70)
+    print(f"Message: {responses['concierge'].message}")
+    print(f"Tools Used: {responses['concierge'].tools_used}")
+    print(f"Reasoning: {responses['concierge'].reasoning}")
+    
+    if responses['operations']:
+        print("\n" + "="*70)
+        print("⚙️  OPERATIONS MANAGER RESPONSE")
+        print("="*70)
+        print(f"Message: {responses['operations'].message}")
+        print(f"Tools Used: {responses['operations'].tools_used}")
+        print(f"Reasoning: {responses['operations'].reasoning}")
+    
+    print("="*70)
+```
+
+## File Structure Changes
+
+### New Files for v0.2
+```
+omotenashi/
+├── agent.py                          # Agent 1 (Concierge) - Enhanced
+├── operations_agent.py               # Agent 2 (Operations) - NEW
+├── agent_coordinator.py              # Coordination logic - NEW
+├── trigger_manager.py                # Trigger detection - NEW
+├── tools.py                          # Enhanced with new tools
+├── cli.py                            # Enhanced for dual display
+├── config/
+│   ├── bdi_profile.yaml             # Agent 1 BDI (existing)
+│   └── operations_bdi_profile.yaml  # Agent 2 BDI - NEW
+├── data/
+│   └── mock_data.json               # Enhanced mock data
+├── docs/
+│   ├── design_decisions.md          # Updated with v0.2 decisions
+│   └── prototype_v0.2_implementation_proposal.txt  # This file
+├── requirements.txt
+├── README.md
+└── main.py                          # Updated entry point
+```
+
+## Implementation Phases
+
+### Phase 1: Agent 2 Foundation (Day 1)
+1. Create OperationsAgent class with BDI profile
+2. Implement Agent 2's 5 tools with mock responses
+3. Add trigger_escalation tool to Agent 1
+4. Test Agent 2 in isolation
+
+### Phase 2: Agent Coordination (Day 2)
+1. Build AgentCoordinator class
+2. Implement TriggerManager logic
+3. Create message passing between agents
+4. Test trigger scenarios
+
+### Phase 3: CLI Enhancement (Day 3)
+1. Modify CLI to display both agent responses
+2. Add clear visual separation and labeling
+3. Test complete end-to-end scenarios
+4. Validate all trigger conditions
+
+## Sample Interaction Flows
+
+### Scenario 1: Check-out Time Change (Triggers Operations)
+```
+User: "I need to change my check-out to 2 PM tomorrow"
+
+🏨 CONCIERGE AGENT RESPONSE
+═══════════════════════════════════════════════════════════════════
+Message: I've updated your check-out to 2 PM tomorrow. All set!
+Tools Used: [checkin_checkout]
+Reasoning: Guest requested schedule change - updated immediately per Omotenashi service principles
+
+⚙️ OPERATIONS MANAGER RESPONSE
+═══════════════════════════════════════════════════════════════════
+Message: ✅ Property Manager notified: Guest check-in/check-out time modified. Housekeeping and logistics updated.
+Tools Used: [communicate_booking_changes]
+Reasoning: Schedule changes require operational coordination per Omotenashi seamless service belief
+```
+
+### Scenario 2: Complex Issue Requiring Escalation
+```
+User: "The air conditioning in my room isn't working and I have an important meeting here in 2 hours"
+
+🏨 CONCIERGE AGENT RESPONSE
+═══════════════════════════════════════════════════════════════════
+Message: I understand the urgency of your situation. Let me escalate this immediately to our operations team for swift resolution.
+Tools Used: [trigger_escalation]
+Reasoning: AC issue with time pressure requires immediate management intervention beyond standard concierge tools
+
+⚙️ OPERATIONS MANAGER RESPONSE
+═══════════════════════════════════════════════════════════════════
+Message: 🔧 Escalation resolved: AC repair in Room 305. Management team engaged, guest satisfaction prioritized. Maintenance dispatched immediately, alternate meeting room prepared as backup.
+Tools Used: [resolve_escalation]
+Reasoning: Urgent guest issue requires immediate operational response and backup planning per Omotenashi anticipatory service
+```
+
+### Scenario 3: Simple Request (No Triggers)
+```
+User: "Can you recommend a good restaurant for dinner?"
+
+🏨 CONCIERGE AGENT RESPONSE
+═══════════════════════════════════════════════════════════════════
+Message: I'd love to recommend our Michelin-starred Kaiseki restaurant for an authentic Japanese dining experience, or Il Cielo for romantic Italian cuisine with panoramic views.
+Tools Used: [recommendations]
+Reasoning: Guest seeking dining options - provided curated selections matching luxury standards per Omotenashi hospitality principles
+
+(No Operations Manager response - no triggers activated)
+```
+
+## Design Decisions for v0.2
+
+### Decision 1: Linear Agent Processing
+**Decision**: Agent 1 processes first, then triggers Agent 2 (not parallel)
+**Rationale**: Simpler for prototype, matches trigger-based workflow in PRD
+**Impact**: Clear causality, easier debugging, may be slower for complex interactions
+
+### Decision 2: Event-Driven Operations Agent
+**Decision**: Agent 2 only activates on specific triggers from Agent 1
+**Rationale**: PRD specifies Agent 2 responds to Agent 1 actions, not direct user input
+**Impact**: Clear separation of responsibilities, reduced complexity
+
+### Decision 3: Mock Property Manager Communication
+**Decision**: "Property Manager notifications" are returned as text responses
+**Rationale**: Prototype focus, no real integration needed
+**Impact**: Demonstrates workflow without external dependencies
+
+### Decision 4: Simple Trigger Detection
+**Decision**: Use tool name matching for trigger detection
+**Rationale**: Reliable, simple to implement and debug
+**Impact**: Limited flexibility, but appropriate for prototype scope
+
+## Success Metrics for v0.2
+
+### Functional Requirements
+- [ ] Agent 2 has functional BDI profile and all 5 tools
+- [ ] Agent 1 has new trigger_escalation tool
+- [ ] Check-in/check-out changes trigger operations communication
+- [ ] Escalations trigger operations resolution
+- [ ] CLI displays both agent responses clearly
+- [ ] All tools work correctly in isolation and coordination
+
+### Quality Requirements  
+- [ ] Response time < 5 seconds for dual-agent scenarios
+- [ ] Clear visual separation of agent responses
+- [ ] Proper trigger detection (no false positives/negatives)
+- [ ] Omotenashi principles evident in both agents
+- [ ] Code remains simple and well-commented
+
+## Risk Mitigation
+
+### Technical Risks
+- **Agent Coordination Complexity**: Start with simple linear processing
+- **Trigger Reliability**: Use explicit tool name matching
+- **CLI Layout**: Test visual formatting extensively
+
+### Scope Risks
+- **Feature Creep**: Stick strictly to PRD v0.2 requirements
+- **Over-Engineering**: Maintain simple mock implementations
+- **Integration Complexity**: Keep all interactions text-based
+
+## Next Steps
+
+1. **Update design_decisions.md** with v0.2 architectural choices
+2. **Begin Phase 1 implementation** with Operations Agent foundation
+3. **Test incrementally** after each component addition
+4. **Validate against PRD** requirements throughout development
+
+---
+
+This proposal maintains the simplicity principle while adding the multi-agent coordination required for Prototype v0.2. The implementation focuses on demonstrating the trigger-based workflow and dual-agent responses as specified in the PRD. 

@@ -1,0 +1,45 @@
+# Logging Configuration for Omotenashi
+# This file contains configurable settings for the conversation logging system
+
+# Rate limiting settings
+rate_limiting:
+  messages_per_minute: 10
+  timeout_seconds: 60
+
+# Session management
+session:
+  timeout_hours: 2
+  max_concurrent_sessions: 50
+  cleanup_threshold: 50
+
+# Database settings
+database:
+  path: "logs/conversations.db"
+  connection_timeout_seconds: 30
+  max_connections: 10
+  enable_wal_mode: true
+
+# Export settings
+export:
+  max_records_csv: 10000
+  max_records_html: 5000
+  default_days_history: 7
+
+# Performance monitoring thresholds
+monitoring:
+  max_error_rate_percent: 5.0
+  max_processing_time_ms: 5000
+  max_rate_limiting_percent: 10.0
+  alert_on_high_usage: true
+
+# Security settings
+security:
+  enable_file_permissions: true
+  log_sensitive_data: false
+  encrypt_user_data: false
+  
+# Conversation memory settings
+memory:
+  window_size: 10
+  auto_cleanup: true
+  cleanup_interval_hours: 24

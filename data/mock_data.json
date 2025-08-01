@@ -1,0 +1,137 @@
+{
+  "property": {
+    "name": "The Grand Omotenashi Resort",
+    "location": "743 Verno Ave, Venice, CA 90291 - Oceanfront luxury in Venice Beach",
+    "rooms": 200,
+    "restaurants": [
+      {
+        "name": "Kaiseki",
+        "type": "Japanese Fine Dining",
+        "rating": "Michelin 2-star",
+        "signature": "9-course seasonal tasting menu"
+      },
+      {
+        "name": "Il Cielo",
+        "type": "Italian",
+        "location": "Rooftop",
+        "features": ["Live music", "Sunset views", "Fresh pasta bar"]
+      },
+      {
+        "name": "Ocean Terrace",
+        "type": "International",
+        "specialty": "Fresh seafood"
+      },
+      {
+        "name": "Sunset Bar",
+        "type": "Bar & Lounge",
+        "features": ["Craft cocktails", "Live jazz", "Ocean views"]
+      }
+    ]
+  },
+  
+  "spa_treatments": [
+    {
+      "name": "Omotenashi Signature Journey",
+      "duration": "3 hours",
+      "includes": [
+        "Hot stone massage",
+        "Gold leaf facial",
+        "Private onsen session",
+        "Champagne and fruit"
+      ]
+    },
+    {
+      "name": "Couples Moonlight Ritual",
+      "duration": "2 hours",
+      "features": [
+        "Outdoor pavilion under stars",
+        "Side-by-side massage",
+        "Aromatherapy",
+        "Sound healing"
+      ]
+    },
+    {
+      "name": "Traditional Shiatsu",
+      "duration": "90 minutes",
+      "therapist": "Master from Tokyo",
+      "includes": "Herbal tea ceremony"
+    }
+  ],
+  
+  "activities": [
+    {
+      "name": "Private Sunset Yacht Cruise",
+      "duration": "3 hours",
+      "includes": [
+        "Private yacht with crew",
+        "Champagne and canapés",
+        "Photography service",
+        "Dolphin watching"
+      ]
+    },
+    {
+      "name": "Traditional Tea Ceremony",
+      "duration": "2 hours",
+      "features": [
+        "Certified tea master",
+        "Kimono experience",
+        "Garden tea house setting"
+      ]
+    },
+    {
+      "name": "Helicopter Island Tour",
+      "duration": "45 minutes",
+      "highlights": [
+        "Aerial views",
+        "Hidden beaches",
+        "Volcanic landscapes",
+        "Optional champagne picnic"
+      ]
+    }
+  ],
+  
+  "local_recommendations": {
+    "fine_dining": [
+      {
+        "name": "Nobu",
+        "distance": "10 minutes",
+        "type": "Japanese-Peruvian fusion",
+        "signature": "Black cod with miso"
+      },
+      {
+        "name": "La Bernardin",
+        "distance": "15 minutes",
+        "type": "French seafood",
+        "rating": "Michelin 3-star"
+      }
+    ],
+    "cultural": [
+      {
+        "name": "Art Gallery District",
+        "features": ["Local artists", "Private tours", "Boutique shopping"]
+      },
+      {
+        "name": "Historical Temple",
+        "distance": "20 minutes",
+        "highlights": ["500 years old", "Meditation gardens", "Morning prayers"]
+      }
+    ]
+  },
+  
+  "special_services": {
+    "butler_service": {
+      "availability": "24/7",
+      "includes": [
+        "Unpacking assistance",
+        "Personal shopping",
+        "Restaurant reservations",
+        "Custom experiences"
+      ]
+    },
+    "transportation": {
+      "airport_transfer": "Complimentary luxury vehicle",
+      "local_transport": "Tesla fleet available",
+      "helicopter": "On-demand service"
+    }
+  }
+}

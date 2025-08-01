@@ -1,0 +1,226 @@
+{
+  "test_scenarios": [
+    {
+      "id": 1,
+      "name": "Simple Dining Request",
+      "guest_message": "I'd like to have dinner tonight at your best restaurant",
+      "expected_outcomes": {
+        "tools_used": ["recommendations", "reservation"],
+        "bdi_elements": ["anticipatory service", "exceeding expectations"],
+        "response_qualities": ["specific restaurant details", "booking confirmation", "thoughtful additions"]
+      },
+      "complexity": "medium",
+      "category": "dining"
+    },
+    {
+      "id": 2,
+      "name": "Wellness & Relaxation",
+      "guest_message": "I need to unwind after a long flight. What do you recommend?",
+      "expected_outcomes": {
+        "tools_used": ["recommendations", "spa"],
+        "bdi_elements": ["understanding underlying needs", "comprehensive care"],
+        "response_qualities": ["multiple relaxation options", "spa booking offer", "flight consideration"]
+      },
+      "complexity": "medium",
+      "category": "wellness"
+    },
+    {
+      "id": 3,
+      "name": "Property Information",
+      "guest_message": "Can you tell me about the resort amenities and facilities?",
+      "expected_outcomes": {
+        "tools_used": ["property_info"],
+        "bdi_elements": ["thorough information", "anticipating follow-up needs"],
+        "response_qualities": ["comprehensive amenities list", "hours and policies", "offer to assist further"]
+      },
+      "complexity": "low",
+      "category": "information"
+    },
+    {
+      "id": 4,
+      "name": "Complex Romance Planning",
+      "guest_message": "I want to surprise my wife with the most romantic evening possible for our anniversary",
+      "expected_outcomes": {
+        "tools_used": ["recommendations", "reservation", "spa"],
+        "bdi_elements": ["anticipating comprehensive needs", "creating memorable experiences", "attention to detail"],
+        "response_qualities": ["multiple coordinated services", "special anniversary touches", "seamless experience planning"]
+      },
+      "complexity": "high",
+      "category": "special_occasion"
+    },
+    {
+      "id": 5,
+      "name": "Check-in Flexibility",
+      "guest_message": "I'm arriving early tomorrow. Can I check in at 11 AM?",
+      "expected_outcomes": {
+        "tools_used": ["checkin_checkout"],
+        "bdi_elements": ["accommodating guest needs", "proactive service"],
+        "response_qualities": ["early check-in confirmation", "policy explanation", "additional services offered"]
+      },
+      "complexity": "low",
+      "category": "logistics"
+    },
+    {
+      "id": 6,
+      "name": "Cultural Experience Interest",
+      "guest_message": "I'm interested in learning about Hawaiian culture during my stay",
+      "expected_outcomes": {
+        "tools_used": ["recommendations", "reservation"],
+        "bdi_elements": ["educational enrichment", "cultural appreciation"],
+        "response_qualities": ["authentic cultural experiences", "booking assistance", "local insights"]
+      },
+      "complexity": "medium",
+      "category": "cultural"
+    },
+    {
+      "id": 7,
+      "name": "Adventure Seeking",
+      "guest_message": "What's the most exciting adventure activity you offer?",
+      "expected_outcomes": {
+        "tools_used": ["recommendations", "reservation"],
+        "bdi_elements": ["understanding guest personality", "matching preferences"],
+        "response_qualities": ["thrilling activity options", "safety information", "booking facilitation"]
+      },
+      "complexity": "medium",
+      "category": "adventure"
+    },
+    {
+      "id": 8,
+      "name": "Family Needs",
+      "guest_message": "We're traveling with two young children. What activities would be good for them?",
+      "expected_outcomes": {
+        "tools_used": ["property_info", "recommendations"],
+        "bdi_elements": ["family-focused service", "age-appropriate suggestions"],
+        "response_qualities": ["kids club information", "family activities", "safety considerations"]
+      },
+      "complexity": "medium",
+      "category": "family"
+    },
+    {
+      "id": 9,
+      "name": "Spa Day Planning",
+      "guest_message": "I want to book a full spa day experience for tomorrow",
+      "expected_outcomes": {
+        "tools_used": ["recommendations", "spa", "reservation"],
+        "bdi_elements": ["comprehensive wellness journey", "day-long coordination"],
+        "response_qualities": ["multiple treatments", "timing coordination", "additional wellness elements"]
+      },
+      "complexity": "high",
+      "category": "wellness"
+    },
+    {
+      "id": 10,
+      "name": "Last-Minute Changes",
+      "guest_message": "I need to extend my checkout until 6 PM tomorrow for a late flight",
+      "expected_outcomes": {
+        "tools_used": ["checkin_checkout"],
+        "bdi_elements": ["accommodating changes", "understanding travel needs"],
+        "response_qualities": ["late checkout confirmation", "travel assistance", "facility access details"]
+      },
+      "complexity": "low",
+      "category": "logistics"
+    },
+    {
+      "id": 11,
+      "name": "Celebration Planning",
+      "guest_message": "It's my birthday tomorrow. Can you help make it special?",
+      "expected_outcomes": {
+        "tools_used": ["recommendations", "reservation", "spa"],
+        "bdi_elements": ["celebration enhancement", "personal touch", "creating memorable moments"],
+        "response_qualities": ["birthday-specific suggestions", "coordinated celebrations", "special arrangements"]
+      },
+      "complexity": "high",
+      "category": "special_occasion"
+    },
+    {
+      "id": 12,
+      "name": "Dietary Considerations",
+      "guest_message": "I'm vegetarian and my partner is gluten-free. Where should we eat?",
+      "expected_outcomes": {
+        "tools_used": ["recommendations", "reservation"],
+        "bdi_elements": ["accommodating dietary needs", "inclusive service"],
+        "response_qualities": ["dietary-appropriate restaurants", "menu considerations", "kitchen communication"]
+      },
+      "complexity": "medium",
+      "category": "dining"
+    },
+    {
+      "id": 13,
+      "name": "Weather Contingency",
+      "guest_message": "What indoor activities do you have in case it rains?",
+      "expected_outcomes": {
+        "tools_used": ["property_info", "recommendations"],
+        "bdi_elements": ["contingency planning", "ensuring continued enjoyment"],
+        "response_qualities": ["indoor facility options", "covered activities", "weather-independent experiences"]
+      },
+      "complexity": "medium",
+      "category": "information"
+    },
+    {
+      "id": 14,
+      "name": "Surprise Proposal",
+      "guest_message": "I'm planning to propose to my girlfriend here. Can you help make it perfect?",
+      "expected_outcomes": {
+        "tools_used": ["recommendations", "reservation"],
+        "bdi_elements": ["life moment significance", "discretion and coordination", "perfection in details"],
+        "response_qualities": ["romantic venue suggestions", "coordination assistance", "privacy considerations"]
+      },
+      "complexity": "high",
+      "category": "special_occasion"
+    },
+    {
+      "id": 15,
+      "name": "Transportation Needs",
+      "guest_message": "How can I get to the local town for shopping and sightseeing?",
+      "expected_outcomes": {
+        "tools_used": ["property_info", "recommendations"],
+        "bdi_elements": ["facilitating exploration", "local knowledge sharing"],
+        "response_qualities": ["transportation options", "shopping recommendations", "timing guidance"]
+      },
+      "complexity": "low",
+      "category": "logistics"
+    }
+  ],
+  
+  "evaluation_criteria": {
+    "functional_correctness": {
+      "description": "Does the agent workflow complete successfully?",
+      "metrics": ["tool_selection_accuracy", "api_call_success", "response_generation"]
+    },
+    "tool_coordination": {
+      "description": "Are tools selected and used appropriately?",
+      "metrics": ["tool_relevance", "tool_completeness", "tool_sequence"]
+    },
+    "bdi_adherence": {
+      "description": "Does the response embody Omotenashi principles?",
+      "metrics": ["anticipatory_service", "attention_to_detail", "genuine_care", "seamless_experience"]
+    },
+    "response_quality": {
+      "description": "Is the response helpful, accurate, and well-structured?",
+      "metrics": ["completeness", "accuracy", "clarity", "warmth", "actionability"]
+    },
+    "knowledge_base_usage": {
+      "description": "Does the agent use property knowledge accurately?",
+      "metrics": ["factual_accuracy", "specific_details", "policy_compliance"]
+    }
+  },
+  
+  "scoring_rubric": {
+    "excellent": {
+      "score": 4,
+      "description": "Exceeds expectations, demonstrates true Omotenashi"
+    },
+    "good": {
+      "score": 3,
+      "description": "Meets expectations, solid performance"
+    },
+    "acceptable": {
+      "score": 2,
+      "description": "Basic functionality, room for improvement"
+    },
+    "poor": {
+      "score": 1,
+      "description": "Below expectations, significant issues"
+    }
+  }
+}
