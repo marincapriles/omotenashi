@@ -174,3 +174,39 @@ Key metrics to monitor in production:
 4. **Security Hardening**: Database file permissions, configurable data retention, secure logging
 5. **Comprehensive Auditing**: Full conversation context, tool reasoning, performance metrics
 6. **Production Readiness**: Rate limiting, session management, error handling, monitoring thresholds
+
+### Proprietary Architecture Migration (2025-08-01)
+
+A comprehensive 8-week implementation plan has been created to migrate from the current LangChain-based system to a proprietary BDI-ToM (Beliefs, Desires, Intentions + Theory of Mind) architecture optimized for luxury hospitality.
+
+**Key Migration Components:**
+
+1. **Proprietary BDI Engine** (`src/omotenashi/proprietary/core/`)
+   - Custom BeliefNetwork with dynamic belief updates and confidence scoring
+   - DesireEngine with hospitality-specific prioritization algorithms
+   - IntentionPlanner for multi-step plan generation and execution
+
+2. **Theory of Mind Integration** (`src/omotenashi/proprietary/core/theory_of_mind.py`)
+   - Guest mental state modeling with emotional inference
+   - Cultural adaptation and communication style adjustment
+   - Implicit need detection and anticipatory service capabilities
+
+3. **Hospitality Optimization** (`src/omotenashi/proprietary/hospitality/`)
+   - AnticipationEngine for predictive guest service
+   - ServicePatternLibrary with codified Omotenashi patterns
+   - CulturalAdapter for culturally-sensitive interactions
+
+4. **Custom Workflow Engine** (`src/omotenashi/proprietary/hospitality/workflows.py`)
+   - Replacement for LangGraph with hospitality-specific state machines
+   - Parallel action execution and workflow templates
+   - Dynamic workflow adaptation based on BDI reasoning
+
+**Implementation Plan:** See `docs/proprietary-bdi-implementation-workplan.md` for detailed 40-day step-by-step implementation guide.
+
+**Feature Flag System:** Incremental migration using feature flags in `src/omotenashi/proprietary/config.py` to maintain system stability.
+
+**Success Metrics:**
+- Response time: < 2s (current: ~3s)
+- Tool selection accuracy: > 95% (current: ~85%)
+- Anticipation success rate: > 70% (new capability)
+- Guest satisfaction improvement: > 20%
