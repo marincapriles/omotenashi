@@ -1,0 +1,139 @@
+# Flagship Scenarios for BDI-ToM Implementation
+# These two scenarios drive the initial development
+
+flagship_scenarios:
+  cultural_adaptation_concierge:
+    id: "japanese_business_traveler"
+    description: "Japanese business traveler attending Microsoft conference"
+    persona:
+      nationality: "Japanese"
+      purpose: "Business - Tech Conference"
+      cultural_expectations: "High formality, anticipatory service"
+      
+    test_interactions:
+      - input: "Hello, I'm checking in. I'm here from Tokyo for the Microsoft Azure conference."
+        expected_behaviors:
+          - use_formal_communication: true
+          - anticipate_business_needs: true
+          - cultural_indicators:
+              - "acknowledge_with_respect"
+              - "offer_business_card_holder"
+              - "suggest_quiet_floor"
+          
+      - input: "I need dinner recommendations for tonight. I have a client meeting."
+        expected_behaviors:
+          - recommend_business_appropriate: true
+          - consider_dietary_preferences: true
+          - anticipated_services:
+              - "private_dining_room"
+              - "taxi_pre_arrangement"
+              - "restaurant_business_card"
+              
+    testable_outcomes:
+      communication_formality_score: 
+        min: 0.9
+        measurement: "linguistic_analysis"
+      cultural_appropriateness: 
+        min: 95
+        unit: "percent"
+        measurement: "cultural_expert_review"
+      anticipation_accuracy:
+        min: 80
+        unit: "percent"
+        measurement: "predicted_vs_requested_services"
+      guest_satisfaction:
+        min: 4.5
+        max: 5.0
+        measurement: "post_interaction_survey"
+        
+    belief_impacts:
+      guest_culture: 
+        value: "Japanese"
+        confidence: 0.95
+      formality_preference:
+        value: 0.9
+        confidence: 0.85
+      business_context:
+        value: true
+        confidence: 0.9
+      anticipation_needs:
+        - "early_breakfast"
+        - "meeting_room"
+        - "printer_access"
+        
+  anniversary_anticipation_service:
+    id: "anniversary_celebration"
+    description: "Couple celebrating 10th wedding anniversary"
+    persona:
+      occasion: "10th Wedding Anniversary"
+      preferences: "Italian cuisine, spa, photography"
+      emotional_context: "Romantic, celebratory, memorable"
+      
+    test_interactions:
+      - input: "Hi, we're checking in. It's our 10th anniversary trip!"
+        expected_behaviors:
+          - express_warm_congratulations: true
+          - anticipate_romantic_needs: true
+          - proactive_offers:
+              - "room_upgrade_to_suite"
+              - "champagne_and_flowers"
+              - "anniversary_amenities"
+              
+      - input: "My wife loves Italian food. Do you have any special recommendations?"
+        expected_behaviors:
+          - suggest_romantic_italian: true
+          - anticipate_special_touches: true
+          - coordinated_services:
+              - "restaurant_anniversary_notation"
+              - "special_table_request"
+              - "dessert_surprise_arrangement"
+              - "photographer_suggestion"
+              
+    testable_outcomes:
+      emotional_resonance_score:
+        min: 0.85
+        measurement: "sentiment_analysis"
+      service_coordination_success:
+        min: 90
+        unit: "percent"
+        measurement: "successful_arrangements / total_arrangements"
+      upsell_acceptance_rate:
+        min: 60
+        unit: "percent"  
+        measurement: "accepted_suggestions / total_suggestions"
+      memorable_moment_creation:
+        min: 4.7
+        max: 5.0
+        measurement: "guest_feedback_score"
+        
+    belief_impacts:
+      special_occasion:
+        value: "anniversary"
+        confidence: 1.0
+      celebration_magnitude:
+        value: 0.9  # 10th anniversary is significant
+        confidence: 0.95
+      romantic_context:
+        value: true
+        confidence: 1.0
+      anticipation_needs:
+        - "spa_couple_package"
+        - "late_checkout"
+        - "breakfast_in_bed"
+        - "photo_locations"
+        
+pattern_validation:
+  confidence_thresholds:
+    belief_update: 0.7
+    action_trigger: 0.8
+    anticipation: 0.75
+    
+  measurement_frequency:
+    realtime: ["response_time", "tool_selection"]
+    post_interaction: ["satisfaction", "appropriateness"]
+    daily: ["pattern_effectiveness", "anticipation_accuracy"]
+    
+  failover_strategies:
+    low_confidence: "request_clarification"
+    pattern_conflict: "use_conservative_pattern"
+    tool_failure: "graceful_degradation"
