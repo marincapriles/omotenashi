@@ -175,38 +175,84 @@ Key metrics to monitor in production:
 5. **Comprehensive Auditing**: Full conversation context, tool reasoning, performance metrics
 6. **Production Readiness**: Rate limiting, session management, error handling, monitoring thresholds
 
-### Proprietary Architecture Migration (2025-08-01)
+### Proprietary Architecture Migration (2025-08-02) - v3.0 Plan
 
-A comprehensive 8-week implementation plan has been created to migrate from the current LangChain-based system to a proprietary BDI-ToM (Beliefs, Desires, Intentions + Theory of Mind) architecture optimized for luxury hospitality.
+We're implementing a proprietary BDI-ToM (Beliefs, Desires, Intentions + Theory of Mind) architecture using a focused, validation-driven approach with three parallel development tracks.
 
-**Key Migration Components:**
+**Current Status:**
+- ✅ BeliefNetwork implemented for 2 flagship scenarios
+- ✅ Tool Selection System with affordance embeddings
+- ✅ Pattern Testing Framework
+- ✅ Agent Trace Logger
+- 🔄 DesireEngine in progress
 
-1. **Proprietary BDI Engine** (`src/omotenashi/proprietary/core/`)
-   - Custom BeliefNetwork with dynamic belief updates and confidence scoring
-   - DesireEngine with hospitality-specific prioritization algorithms
-   - IntentionPlanner for multi-step plan generation and execution
+**Implementation Approach:**
 
-2. **Theory of Mind Integration** (`src/omotenashi/proprietary/core/theory_of_mind.py`)
-   - Guest mental state modeling with emotional inference
-   - Cultural adaptation and communication style adjustment
-   - Implicit need detection and anticipatory service capabilities
+#### Flagship Scenarios (Focus First)
+1. **Cultural Adaptation Concierge**: Japanese business traveler at tech conference
+2. **Anniversary Anticipation Service**: Couple's 10th anniversary celebration
 
-3. **Hospitality Optimization** (`src/omotenashi/proprietary/hospitality/`)
-   - AnticipationEngine for predictive guest service
-   - ServicePatternLibrary with codified Omotenashi patterns
-   - CulturalAdapter for culturally-sensitive interactions
+Start with these 2 scenarios, validate thoroughly, then expand to 10.
 
-4. **Custom Workflow Engine** (`src/omotenashi/proprietary/hospitality/workflows.py`)
-   - Replacement for LangGraph with hospitality-specific state machines
-   - Parallel action execution and workflow templates
-   - Dynamic workflow adaptation based on BDI reasoning
+#### Three Parallel Tracks
+- **Track A - Core BDI**: BeliefNetwork → DesireEngine → IntentionPlanner
+- **Track B - Patterns**: Pattern Library → DSL Engine → Composition System  
+- **Track C - Platform**: Testing Framework → Monitoring → SDK Packaging
 
-**Implementation Plan:** See `docs/proprietary-bdi-implementation-workplan.md` for detailed 40-day step-by-step implementation guide.
+#### Key Components
 
-**Feature Flag System:** Incremental migration using feature flags in `src/omotenashi/proprietary/config.py` to maintain system stability.
+**1. BeliefNetwork** (`src/omotenashi/proprietary/core/belief_network.py`) ✅
+```python
+# Dynamic beliefs with confidence and decay
+beliefs = {
+    'guest_culture': {'value': 'Japanese', 'confidence': 0.95},
+    'formality_preference': {'value': 0.9, 'confidence': 0.85},
+    'special_occasion': {'value': 'anniversary', 'confidence': 1.0}
+}
+```
 
-**Success Metrics:**
-- Response time: < 2s (current: ~3s)
-- Tool selection accuracy: > 95% (current: ~85%)
-- Anticipation success rate: > 70% (new capability)
-- Guest satisfaction improvement: > 20%
+**2. Tool Selection** (`src/omotenashi/proprietary/core/tool_selection.py`) ✅
+- Tool affordance embeddings
+- Belief-aligned selection with explainable reasoning
+- Effectiveness tracking and learning
+
+**3. Pattern Testing** (`src/omotenashi/proprietary/utils/pattern_testing.py`) ✅
+- Every pattern has measurable outcomes
+- Confidence ranges and failover strategies
+- Validation against test scenarios
+
+**4. Trace Logger** (`src/omotenashi/proprietary/utils/trace_logger.py`) ✅
+- Comprehensive decision logging
+- Pattern effectiveness tracking
+- Tool selection insights
+
+#### Daily Workflow
+
+1. **Check GitHub Project Board**: https://github.com/marincapriles/omotenashi/projects
+2. **Run Flagship Tests**: `python3 tests/proprietary/unit/test_belief_network.py`
+3. **Update Innovation Log**: Document novel algorithms
+4. **Validate Performance**: Ensure <50ms belief updates
+
+#### Testing Commands
+```bash
+# Run proprietary component tests
+python3 -m pytest tests/proprietary/ -v
+
+# Test flagship scenarios
+python3 src/omotenashi/proprietary/core/belief_network.py
+
+# Check performance
+python3 -m pytest tests/proprietary/unit/test_belief_network.py::TestBeliefNetwork::test_performance_update_time -v
+```
+
+#### Success Metrics (Week by Week)
+| Week | Response Time | Tool Accuracy | Pattern Success | User Satisfaction |
+|------|--------------|---------------|-----------------|-------------------|
+| 1-2  | <3.0s        | >90%          | >85% (2 patterns) | >75%           |
+| 3-4  | <2.8s        | >95%          | >85% (2 patterns) | >80%           |
+| 5-6  | <2.5s        | >95%          | >80% (20 patterns)| >85%           |
+| 7-8  | <2.0s        | >95%          | >85% (all)       | >90%           |
+
+**Implementation Plan:** See `docs/platform/proprietary-bdi-implementation-workplan-v3.md`
+
+**GitHub Issues:** Track progress at https://github.com/marincapriles/omotenashi/issues

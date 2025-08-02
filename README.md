@@ -1,17 +1,80 @@
-# Omotenashi - Luxury Hospitality AI Concierge
+# Omotenashi - Agentic Infrastructure for Next-Generation Hospitality
 
 ## Overview
 
-Omotenashi is an AI-powered luxury hospitality concierge that embodies the Japanese principle of selfless hospitality. Built with Anthropic's Claude 3.5 Sonnet and LangGraph, it provides exceptional, anticipatory service through a Beliefs, Desires, and Intentions (BDI) framework.
+Omotenashi is pioneering the future of hospitality through an agentic AI platform that embodies the Japanese principle of anticipatory, wholehearted service. We're building a proprietary BDI-ToM (Beliefs, Desires, Intentions + Theory of Mind) architecture that serves as the essential hospitality intelligence layer between general-purpose AI assistants and hotel systems.
+
+## 🎯 Vision
+
+To become the indispensable hospitality intelligence that every AI assistant relies on when users need hotel services - from ChatGPT to Claude to Alexa and beyond.
+
+## 🏗️ Architecture Evolution
+
+### Current: ReAct Agent with LangChain
+- Claude 3.5 Sonnet-powered concierge
+- 5 specialized hospitality tools
+- BDI principles embedded in prompts
+
+### In Development: Proprietary BDI-ToM Architecture
+- **Belief Network**: Dynamic guest understanding with cultural awareness
+- **Desire Engine**: Hospitality-specific goal prioritization  
+- **Intention Planner**: Multi-step service orchestration
+- **Theory of Mind**: Guest mental state modeling for anticipatory service
+- **Tool Selection System**: Explainable, belief-aligned tool choices
+
+## 🚀 Implementation Roadmap (9 Weeks)
+
+### Phase 1: Foundation (Weeks 1-2)
+- ✅ Minimal Viable BeliefNetwork for 2 flagship scenarios
+- 🔄 DesireEngine with belief integration
+- 🔄 Tool selection with affordance embeddings
+
+### Phase 2: Intelligence Layer (Weeks 3-4)
+- Theory of Mind integration
+- Enhanced tool selection with guest mental models
+- Pattern library for hospitality scenarios
+
+### Phase 3: Anticipation Engine (Weeks 5-6)
+- Pattern composition system
+- Anticipatory service capabilities
+- Expand from 2 to 10 scenarios
+
+### Phase 4: Production Platform (Weeks 7-9)
+- Custom workflow engine replacing LangGraph
+- Production monitoring and SDK packaging
+- Performance optimization (<2s responses)
+
+## 🎭 Flagship Scenarios
+
+### 1. Cultural Adaptation Concierge
+**Japanese Business Traveler at Microsoft Conference**
+- Formal communication style (keigo patterns)
+- Business amenity prioritization
+- Cultural dietary considerations
+- Anticipatory business services
+
+### 2. Anniversary Anticipation Service
+**Couple's 10th Anniversary Celebration**
+- Romantic atmosphere coordination
+- Special moment orchestration
+- Surprise element management
+- Emotional resonance optimization
 
 ## Features
 
+### Current Capabilities
 - **BDI-Driven Behavior**: Agent operates based on Omotenashi principles
-- **5 Specialized Tools**: Property info, recommendations, reservations, spa booking, and check-in/out modifications
-- **LangGraph Workflow**: Structured decision-making and tool selection
-- **Elegant CLI**: Warm, welcoming command-line interface
-- **Telegram Bot**: Interact with the concierge via Telegram on your phone
-- **Transparent Reasoning**: Understand how the agent makes decisions
+- **5 Specialized Tools**: Property info, recommendations, reservations, spa booking, check-in/out
+- **Multi-Interface**: CLI and Telegram bot
+- **Transparent Reasoning**: Explainable decision-making
+- **Conversation Auditing**: Comprehensive logging and analytics
+
+### Coming Soon
+- **Belief-Based Personalization**: Dynamic guest preference learning
+- **Anticipatory Service**: Predict needs before they're expressed
+- **Cultural Intelligence**: Adapt communication and service style
+- **Multi-Property Network Effects**: Learn from millions of interactions
+- **Tool Effectiveness Learning**: Continuously improve selections
 
 ## Quick Start
 
@@ -69,87 +132,106 @@ Once running, try these interactions:
 
 ```
 omotenashi/
-├── main.py                    # Entry point and application setup
+├── main.py                    # Entry point (current system)
 ├── telegram_main.py           # Telegram bot entry point
 ├── requirements.txt           # Python dependencies
 ├── README.md                  # This file
+├── CLAUDE.md                  # Development guidance
 ├── src/
-│   └── omotenashi/           # Core application package
-│       ├── __init__.py       # Package initialization
-│       ├── agent.py          # Core AI agent with BDI framework
-│       ├── react_agent.py    # ReAct agent implementation
-│       ├── tools.py          # Mock tool implementations
-│       ├── langchain_tools.py # LangChain tool wrappers
-│       ├── cli.py            # Command-line interface
-│       └── telegram_bot.py   # Telegram bot interface
-├── tests/                    # All test files
-│   ├── __init__.py          # Test package initialization
-│   ├── test_omotenashi.py   # Main functionality tests
-│   ├── test_knowledge_base.py # Knowledge base tests
-│   ├── test_react_migration.py # ReAct agent tests
-│   └── test_simplified_prompt.py # Prompt optimization tests
-├── scripts/                  # Analysis and validation scripts
-│   ├── e2e_validation.py    # End-to-end validation
-│   ├── e2e_react_validation.py # ReAct agent validation
-│   └── evaluate_tool_selection.py # Tool selection analysis
-├── analysis/                 # Analysis results and outputs
-│   ├── e2e_validation_analysis.md
-│   ├── e2e_validation_results_*.json
-│   ├── react_validation_results.json
-│   └── FINAL_E2E_VALIDATION_RESULTS.txt
-├── config/
-│   └── bdi_profile.yaml     # Omotenashi principles configuration
-├── data/
-│   ├── mock_data.json       # Mock property and service data
-│   ├── evaluation_samples.json
-│   ├── e2e_test_scenarios.json
-│   └── property_knowledge_base.json
-└── docs/                     # Documentation
-    ├── design_decisions.md
-    ├── design_document.md
-    ├── MIGRATION_GUIDE.md
-    ├── operations_manager_enhancements.md
-    ├── prototype_v0.2_implementation_proposal.txt
-    ├── prototype_v0.2_implementation_proposal_refined.md
-    ├── react_agent_comparison.md
-    ├── CLAUDE.md
-    └── # Omotenashi PRD.md
+│   └── omotenashi/
+│       ├── __init__.py
+│       ├── agent.py          # Current ReAct agent
+│       ├── react_agent.py    
+│       ├── tools.py          
+│       ├── cli.py            
+│       ├── telegram_bot.py   
+│       └── proprietary/      # New BDI-ToM architecture
+│           ├── core/
+│           │   ├── belief_network.py    # ✅ Implemented
+│           │   ├── desire_engine.py     # 🔄 In Progress
+│           │   ├── intention_planner.py # 📋 Planned
+│           │   ├── theory_of_mind.py    # 📋 Planned
+│           │   └── tool_selection.py    # ✅ Implemented
+│           ├── hospitality/
+│           │   ├── patterns.py          # 🔄 In Progress
+│           │   ├── anticipation.py      # 📋 Planned
+│           │   └── cultural_adapter.py  # 📋 Planned
+│           ├── testing/
+│           │   └── flagship_scenarios.yaml # ✅ Implemented
+│           └── utils/
+│               ├── pattern_testing.py   # ✅ Implemented
+│               └── trace_logger.py      # ✅ Implemented
+├── tests/
+│   ├── proprietary/
+│   │   └── unit/
+│   │       └── test_belief_network.py  # ✅ Implemented
+│   └── [existing tests]
+├── scripts/
+│   ├── setup_project_board.md          # Project management
+│   └── create_all_issues.sh            # GitHub automation
+├── docs/
+│   └── platform/
+│       ├── proprietary-bdi-implementation-workplan-v3.md  # Current plan
+│       └── [product memos and feedback]
+└── [existing folders]
 ```
 
 ## Key Components
 
-### Agent (src/omotenashi/agent.py)
+### Current System (LangChain/ReAct)
+- **Agent**: ReAct pattern with BDI principles in prompts
+- **Tools**: 5 mock hotel service tools
+- **Interfaces**: CLI and Telegram bot
 
-- Embeds BDI principles in system prompt
-- Uses LangGraph for workflow orchestration
-- Processes requests through 4 nodes: analyze → select tools → execute → respond
+### Proprietary BDI-ToM Architecture (In Development)
 
-### Tools (src/omotenashi/tools.py)
+#### BeliefNetwork (✅ Implemented)
+- Dynamic belief updates from observations
+- Confidence scoring and temporal decay
+- Cultural and contextual understanding
+- Pattern-based inference
 
-- 5 mock tools simulating real hotel services
-- Returns realistic responses for prototype demonstration
+#### Tool Selection System (✅ Implemented)
+- Tool affordance embeddings
+- Belief-aligned selection
+- Explainable reasoning
+- Effectiveness tracking
 
-### CLI (src/omotenashi/cli.py)
+#### Pattern Testing Framework (✅ Implemented)
+- Testable hospitality patterns
+- Measurable outcomes
+- Failover strategies
+- Confidence adjustments
 
-- Elegant interface with color-coded responses
-- Shows tools used and reasoning (optional)
-- Special commands: help, clear, reasoning, examples
+## Development Approach
 
-## Development Principles
+### Three Parallel Tracks
+- **Track A**: Core BDI Development
+- **Track B**: Hospitality Patterns
+- **Track C**: Platform Infrastructure
 
-This prototype follows these principles:
+### Validation Gates
+- Daily testing against flagship scenarios
+- A/B testing current vs new system
+- Performance benchmarks (<2s response)
+- User satisfaction metrics
 
-- **Simplicity**: Clean, well-commented code
-- **Iterative**: Built to evolve with new features
-- **User-focused**: Every interaction embodies Omotenashi
+### Innovation Focus
+- Tool selection reasoning algorithms
+- Pattern composition system
+- Anticipatory service engine
+- Cultural adaptation models
 
-## Future Enhancements
+## Contributing
 
-- Multi-agent team coordination
-- Real API integrations
-- Web interface
-- Guest preference learning
-- Production deployment
+We're building the future of hospitality AI. Key areas:
+
+1. **BDI Components**: Help implement DesireEngine and IntentionPlanner
+2. **Hospitality Patterns**: Define new service patterns
+3. **Testing**: Expand test scenarios beyond flagship ones
+4. **Performance**: Optimize for <2s responses
+
+See [GitHub Issues](https://github.com/marincapriles/omotenashi/issues) for current tasks.
 
 ## License
 
